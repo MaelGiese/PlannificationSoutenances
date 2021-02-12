@@ -80,31 +80,37 @@ def get_tuteur_not_grouped(df, tuteur_columns, treshold):
 def president_tuteur_diff(df, tuteur_columns):
     column = df[tuteur_columns[0]].value_counts()
     column_1 = df[tuteur_columns[1]].value_counts()
-
     diff = column - column_1
-
     diff = diff.replace(0, np.nan).dropna(axis=0)
 
     return diff
 
 
 if __name__ == "__main__":
-    path = 'Soutenances M1 janvier 2020 - V2.xlsx'
+    # path = 'Soutenances M1 janvier 2020 - V2.xlsx'
+    path = 'Soutenances M1 janvier 2020 - Contraintes.xlsx'
     df = load_excel(path)
     tuteur_columns = ['Président', 'Tuteur Université']
 
     treshold = 2
-
-    tuteurs, soutenances, index = get_tuteur_not_grouped(df, tuteur_columns, treshold)
+    not_grouped_tuteurs, soutenances, index = get_tuteur_not_grouped(df, tuteur_columns, treshold)
 
     hour_column = 'Heure'
     date_column = 'Date'
 
-    for i in range(len(tuteurs)):
-        print(tuteurs[i] + ' a ' + str(soutenances[i]) +
+    # Affiche les contraintes non respectées dans la console
+    print('#################################################')
+    print('TUTEUR AYANT DES SOUTENANCES NON GROUPEES')
+    if len(not_grouped_tuteurs) == 0:
+        print('Aucun tuteur trouvé')
+    for i in range(len(not_grouped_tuteurs)):
+        print(not_grouped_tuteurs[i] + ' a ' + str(soutenances[i]) +
               ' soutenances non groupée, de ' +
               df.iloc[index[i][0]][hour_column] + ' a ' +
               df.iloc[index[i][1]][hour_column] + ', ' +
               df.iloc[index[i][1]][date_column])
 
-    print(president_tuteur_diff(df, tuteur_columns))
+    print('#################################################')
+    print('DIFFERENCE NOMBRE DE SEANCES PRESIDENT/TUTEUR')
+    diff = president_tuteur_diff(df, tuteur_columns)
+    print(diff)
