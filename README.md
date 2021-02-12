@@ -1,1 +1,3 @@
-# PlannificationSoutenances
+## Dependencies
+- numpy
+- pandas
