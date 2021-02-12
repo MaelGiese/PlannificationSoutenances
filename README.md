@@ -7,7 +7,7 @@
 Lancer le fichier `check_contraints.py` pour afficher les contraintes qui ne sont pas respectées
 
 ## Fichier d'entrée
-`Soutenances M1 janvier 2020 - Contraintes.xlsx`: Planning avec des contraintes ajoutées manuellement
+`Soutenances M1 janvier 2020 - Contraintes.xlsx`: Planning avec des violations de contraintes ajoutées manuellement
 
 # Génération d'un planning
 ## Format du fichier d'entrée
