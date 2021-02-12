@@ -1,5 +1,5 @@
 # Détection de contraintes
-## Dépendance
+## Dépendances
 - numpy
 - pandas
 
