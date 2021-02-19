@@ -76,7 +76,6 @@ def get_tuteur_not_grouped(df, tuteur_columns, treshold):
 
 
 # - chaque enseignant fait a peu près autant de soutenances en tant que président qu'en tant que tuteur
-
 def president_tuteur_diff(df, tuteur_columns):
     column = df[tuteur_columns[0]].value_counts()
     column_1 = df[tuteur_columns[1]].value_counts()
@@ -86,17 +85,29 @@ def president_tuteur_diff(df, tuteur_columns):
     return diff
 
 
+# - un tuteur ne peut pas etre a deux endroits a la fois
+def check_tuteur_unique_time(df, tuteur_columns, start_hour_column):
+    times = df[start_hour_column].unique()
+
+    for t in times:
+        times = df.loc[(df[start_hour_column] == t)]
+
+        duplicates = times[times.duplicated()]
+        print(duplicates)
+
+
 if __name__ == "__main__":
     # path = 'Soutenances M1 janvier 2020 - V2.xlsx'
     path = 'Soutenances M1 janvier 2020 - Contraintes.xlsx'
     df = load_excel(path)
+
     tuteur_columns = ['Président', 'Tuteur Université']
+    start_hour_column = 'Heure Début'
+    end_hour_column = 'Heure Fin'
+    date_column = 'Date'
 
     treshold = 2
     not_grouped_tuteurs, soutenances, index = get_tuteur_not_grouped(df, tuteur_columns, treshold)
-
-    hour_column = 'Heure'
-    date_column = 'Date'
 
     # Affiche les contraintes non respectées dans la console
     print('#################################################')
@@ -106,11 +117,19 @@ if __name__ == "__main__":
     for i in range(len(not_grouped_tuteurs)):
         print(not_grouped_tuteurs[i] + ' a ' + str(soutenances[i]) +
               ' soutenances non groupée, de ' +
-              df.iloc[index[i][0]][hour_column] + ' a ' +
-              df.iloc[index[i][1]][hour_column] + ', ' +
-              df.iloc[index[i][1]][date_column])
+              str(df.iloc[index[i][0]][start_hour_column].hour) + 'h' +
+              str(df.iloc[index[i][0]][start_hour_column].minute) +
+              ' a ' +
+              str(df.iloc[index[i][1]][end_hour_column].hour) + 'h' +
+              str(df.iloc[index[i][1]][end_hour_column].minute) +
+              ', ' +
+              str(df.iloc[index[i][1]][date_column]))
 
-    print('#################################################')
+    print('\n#################################################')
     print('DIFFERENCE NOMBRE DE SEANCES PRESIDENT/TUTEUR')
     diff = president_tuteur_diff(df, tuteur_columns)
     print(diff)
+
+    print('\n#################################################')
+    print('UN TUTEUR NE PEUT PAS ETRE A DEUX ENDROIT A LA FOIS')
+    check_tuteur_unique_time(df, tuteur_columns, start_hour_column)
