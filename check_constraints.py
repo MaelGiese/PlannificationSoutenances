@@ -1,5 +1,6 @@
 from data_processing import load_excel
 import numpy as np
+import pandas as pd
 
 
 # - si plusieurs étudiants ont le même tuteur entreprise, il est préférable que les soutenances soient groupées.
@@ -89,11 +90,21 @@ def president_tuteur_diff(df, tuteur_columns):
 def check_tuteur_unique_time(df, tuteur_columns, start_hour_column):
     times = df[start_hour_column].unique()
 
-    for t in times:
-        times = df.loc[(df[start_hour_column] == t)]
+    duplicates_tuteurs = []
+    duplicates_times = []
 
-        duplicates = times[times.duplicated()]
-        print(duplicates)
+    # Pour chaque horaire de soutenance on regarde si un tuteur n'apparait pas deux fois
+    for t in times:
+        times_duplicates = df.loc[(df[start_hour_column] == t)]
+        tuteurs_in_t = times_duplicates[[tuteur_columns[0], tuteur_columns[1]]].values.ravel()
+        u, c = np.unique(tuteurs_in_t, return_counts=True)
+        duplicates = u[c > 1]
+
+        for d in duplicates:
+            duplicates_tuteurs.append(d)
+            duplicates_times.append(t)
+
+    return duplicates_tuteurs, duplicates_times
 
 
 if __name__ == "__main__":
@@ -132,4 +143,8 @@ if __name__ == "__main__":
 
     print('\n#################################################')
     print('UN TUTEUR NE PEUT PAS ETRE A DEUX ENDROIT A LA FOIS')
-    check_tuteur_unique_time(df, tuteur_columns, start_hour_column)
+    duplicates_tuteurs, duplicates_times = check_tuteur_unique_time(df, tuteur_columns, start_hour_column)
+
+    for i in range(len(duplicates_tuteurs)):
+        print(duplicates_tuteurs[i] + ' est présent a plusieurs soutenance a l\'horaire : ' +
+              str(duplicates_times[i]))
