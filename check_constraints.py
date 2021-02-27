@@ -87,11 +87,12 @@ def president_tuteur_diff(df, tuteur_columns):
 
 
 # - un tuteur ne peut pas etre a deux endroits a la fois
-def check_tuteur_unique_time(df, tuteur_columns, start_hour_column):
+def check_tuteur_unique_time(df, tuteur_columns, room_column, start_hour_column):
     times = df[start_hour_column].unique()
 
     duplicates_tuteurs = []
     duplicates_times = []
+    duplicates_room = []
 
     # Pour chaque horaire de soutenance on regarde si un tuteur n'apparait pas deux fois
     for t in times:
@@ -100,11 +101,23 @@ def check_tuteur_unique_time(df, tuteur_columns, start_hour_column):
         u, c = np.unique(tuteurs_in_t, return_counts=True)
         duplicates = u[c > 1]
 
-        for d in duplicates:
-            duplicates_tuteurs.append(d)
-            duplicates_times.append(t)
+        if len(duplicates) > 0:
+            tuteurs = []
+            times = []
+            rooms = []
+            for d in duplicates:
+                tuteurs.append(d)
+                times.append(t)
+                room = []
+                for r in times_duplicates[room_column]:
+                    room.append(r)
+                rooms.append(room)
 
-    return duplicates_tuteurs, duplicates_times
+            duplicates_tuteurs.append(tuteurs)
+            duplicates_times.append(times)
+            duplicates_room.append(rooms)
+
+    return duplicates_tuteurs, duplicates_times, duplicates_room
 
 
 if __name__ == "__main__":
@@ -116,6 +129,7 @@ if __name__ == "__main__":
     start_hour_column = 'Heure Début'
     end_hour_column = 'Heure Fin'
     date_column = 'Date'
+    room_column = 'Salle'
 
     treshold = 2
     not_grouped_tuteurs, soutenances, index = get_tuteur_not_grouped(df, tuteur_columns, treshold)
@@ -143,8 +157,13 @@ if __name__ == "__main__":
 
     print('\n#################################################')
     print('UN TUTEUR NE PEUT PAS ETRE A DEUX ENDROIT A LA FOIS')
-    duplicates_tuteurs, duplicates_times = check_tuteur_unique_time(df, tuteur_columns, start_hour_column)
+    duplicates_tuteurs, duplicates_times, duplicates_room = check_tuteur_unique_time(df, tuteur_columns, room_column, start_hour_column)
 
     for i in range(len(duplicates_tuteurs)):
-        print(duplicates_tuteurs[i] + ' est présent a plusieurs soutenance a l\'horaire : ' +
-              str(duplicates_times[i]))
+        for j in range(len(duplicates_tuteurs[i])):
+            print()
+            print(duplicates_tuteurs[i][j] + ' est présent a plusieurs soutenance a l\'horaire : ' +
+                  np.datetime_as_string(duplicates_times[i][j], unit='m'))
+            print('dans les salles : ')
+            for s in duplicates_room[i][j]:
+                print('- ' + str(s))
