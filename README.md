@@ -7,11 +7,15 @@
 Lancer le fichier `check_contraints.py` pour afficher les contraintes qui ne sont pas respectées
 
 ## Affichage des violations de contraintes
-Le programme affiche 
+```
 #################################################
 TUTEUR AYANT DES SOUTENANCES NON GROUPEES
 Anne-Marie Lesas a 1 soutenances non groupée, de 9h0 a 9h30, 2020-01-07 00:00:00
 Fabrice Huet a 1 soutenances non groupée, de 8h30 a 9h0, 2020-01-06 00:00:00
+Fabrice Huet a 1 soutenances non groupée, de 9h30 a 10h30, 2020-01-06 00:00:00
+Michel Buffa a 1 soutenances non groupée, de 8h30 a 9h0, 2020-01-07 00:00:00
+Michel Winter a 1 soutenances non groupée, de 9h0 a 9h30, 2020-01-06 00:00:00
+Pierre Crescenzo a 1 soutenances non groupée, de 8h30 a 9h0, 2020-01-06 00:00:00
 
 #################################################
 DIFFERENCE NOMBRE DE SEANCES PRESIDENT/TUTEUR
@@ -30,6 +34,8 @@ Michel Winter est présent a plusieurs soutenance a l'horaire : 2020-01-06T09:00
 dans les salles : 
 - Salle du Conseil
 - TD 14
+```
+
 
 ## Fichier d'entrée
 `Soutenances M1 janvier 2020 - Contraintes.xlsx`: Planning avec des violations de contraintes ajoutées manuellement
