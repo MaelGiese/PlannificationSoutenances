@@ -40,7 +40,7 @@ dans les salles :
 
 # Fichier d'entrée
 `Soutenances M1 janvier 2020 - Contraintes.xlsx`: Planning avec des violations de contraintes ajoutées manuellement
-`Soutenances M1 janvier 2020.xlsx`: Planning avec les violations de contraintes corrigées en fonction des résultats du programme
+/n `Soutenances M1 janvier 2020.xlsx`: Planning avec les violations de contraintes corrigées en fonction des résultats du programme
 
 ## Format du fichier d'entrée excel
 
