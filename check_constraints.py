@@ -125,6 +125,7 @@ if __name__ == "__main__":
     path = 'Documents/Soutenances M1 janvier 2020 - Contraintes.xlsx'
     df = load_excel(path)
 
+
     tuteur_columns = ['Président', 'Tuteur Université']
     start_hour_column = 'Heure Début'
     end_hour_column = 'Heure Fin'
