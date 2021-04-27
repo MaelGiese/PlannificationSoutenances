@@ -5,6 +5,7 @@
 
 ## Run
 Lancer le fichier `check_contraints.py` pour afficher les contraintes qui ne sont pas respectées
+Le fichier `data_processing.py` traite et formate les données avant de lancer les algorithmes de détection
 
 ## Affichage des violations de contraintes
 ```
@@ -37,11 +38,11 @@ dans les salles :
 ```
 
 
-## Fichier d'entrée
+# Fichier d'entrée
 `Soutenances M1 janvier 2020 - Contraintes.xlsx`: Planning avec des violations de contraintes ajoutées manuellement
 `Soutenances M1 janvier 2020.xlsx`: Planning avec les violations de contraintes corrigées en fonction des résultats du programme
 
-# Format du fichier d'entrée excel
+## Format du fichier d'entrée excel
 
 | Colonne                              | Data type |
 |:-------------------------------------|:----------|
