@@ -3,6 +3,12 @@
 - numpy
 - pandas
 
+## Installation
+Avant d'installer le programme il faut installer les dépendances, taper le commande suivante dans la console:
+`pip install pandas`
+`pip install numpy`
+
+
 ## Run
 Lancer le fichier `check_contraints.py` pour afficher les contraintes qui ne sont pas respectées
 <br /> Le fichier `data_processing.py` traite et formate les données avant de lancer les algorithmes de détection
@@ -42,7 +48,7 @@ dans les salles :
 - TD 14
 ```
 
-Résultat pour le fichier `Soutenances M1 janvier 2020.xlsx` avec les voilations de contraintes corrigées grace au programme
+Résultat pour le fichier `Soutenances M1 janvier 2020.xlsx` avec les violations de contraintes corrigées grace au programme
 ```
 #################################################
 TUTEUR AYANT DES SOUTENANCES NON GROUPEES
@@ -79,7 +85,6 @@ Aucun tuteur n'est a deux endroits a la fois
 
 
 ## Information manquante nécéssaire a la génération d'un planing (non implémenté)
-- Nom prénom du tuteur académique
 - Nom prénom du tuteur de l'entreprise
 - Plage horaire disponible
 - Durées des soutenances
