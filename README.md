@@ -57,7 +57,7 @@ dans les salles :
 | Nom/Prénom du président du jury      | String    |
 | Nom/Prénom du tuteur Universitaire   | String    |
 
-## Information manquante nécéssaire a la génération d'un planing
+## Information manquante nécéssaire a la génération d'un planing (non implémenté)
 - Nom prénom du tuteur académique
 - Nom prénom du tuteur de l'entreprise
 - Plage horaire disponible
