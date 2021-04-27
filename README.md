@@ -4,7 +4,7 @@
 - pandas
 
 ## Installation
-### Installer les dépendances nécessaire
+### Installer les dépendances
 Le programme nécéssite que python soit installer au préalable sur la machine.
 Avant d'installer le programme il faut installer les dépendances, entrer le commande suivante dans la console:
 <br />`pip install pandas`
