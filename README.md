@@ -5,9 +5,14 @@
 
 ## Run
 Lancer le fichier `check_contraints.py` pour afficher les contraintes qui ne sont pas respectées
-Le fichier `data_processing.py` traite et formate les données avant de lancer les algorithmes de détection
+<br /> Le fichier `data_processing.py` traite et formate les données avant de lancer les algorithmes de détection
+
+## Documents
+`Soutenances M1 janvier 2020 - Contraintes.xlsx`: Planning avec des violations de contraintes ajoutées manuellement
+<br />`Soutenances M1 janvier 2020.xlsx`: Planning avec les violations de contraintes corrigées en fonction des résultats du programme
 
 ## Affichage des violations de contraintes
+Résultat pour le fichier `Soutenances M1 janvier 2020 - Contraintes.xlsx` avec des voilations de contraintes ajoutées
 ```
 #################################################
 TUTEUR AYANT DES SOUTENANCES NON GROUPEES
@@ -37,6 +42,23 @@ dans les salles :
 - TD 14
 ```
 
+Résultat pour le fichier `Soutenances M1 janvier 2020.xlsx` avec les voilations de contraintes corrigées grace au programme
+```
+#################################################
+TUTEUR AYANT DES SOUTENANCES NON GROUPEES
+Aucun tuteur trouvé
+
+#################################################
+DIFFERENCE NOMBRE DE SEANCES PRESIDENT/TUTEUR
+Anne-Marie Lesas   -4.0
+Gabriel Mopolo      1.0
+Michel Buffa        3.0
+dtype: float64
+
+#################################################
+UN TUTEUR NE PEUT PAS ETRE A DEUX ENDROIT A LA FOIS
+Aucun tuteur n'est a deux endroits a la fois
+```
 
 # Fichier d'entrée
 ## Format du fichier d'entrée excel
@@ -55,9 +77,6 @@ dans les salles :
 | Nom/Prénom du président du jury      | String    |
 | Nom/Prénom du tuteur Universitaire   | String    |
 
-## Documents
-`Soutenances M1 janvier 2020 - Contraintes.xlsx`: Planning avec des violations de contraintes ajoutées manuellement
-<br />`Soutenances M1 janvier 2020.xlsx`: Planning avec les violations de contraintes corrigées en fonction des résultats du programme
 
 ## Information manquante nécéssaire a la génération d'un planing (non implémenté)
 - Nom prénom du tuteur académique
