@@ -121,8 +121,8 @@ def check_tuteur_unique_time(df, tuteur_columns, room_column, start_hour_column)
 
 
 if __name__ == "__main__":
-    path = 'Documents/Soutenances M1 janvier 2020.xlsx'
-    # path = 'Soutenances M1 janvier 2020 - Contraintes.xlsx'
+    # path = 'Documents/Soutenances M1 janvier 2020.xlsx'
+    path = 'Documents/Soutenances M1 janvier 2020 - Contraintes.xlsx'
     df = load_excel(path)
 
     tuteur_columns = ['Président', 'Tuteur Université']
@@ -158,7 +158,8 @@ if __name__ == "__main__":
     print('\n#################################################')
     print('UN TUTEUR NE PEUT PAS ETRE A DEUX ENDROIT A LA FOIS')
     duplicates_tuteurs, duplicates_times, duplicates_room = check_tuteur_unique_time(df, tuteur_columns, room_column, start_hour_column)
-
+    if len(duplicates_tuteurs) == 0:
+        print('Aucun tuteur n\'est a deux endroits a la fois')
     for i in range(len(duplicates_tuteurs)):
         for j in range(len(duplicates_tuteurs[i])):
             print()
