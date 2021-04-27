@@ -37,7 +37,7 @@ def create_datetime(df):
 
 
 if __name__ == "__main__":
-    path = 'Soutenances M1 janvier 2020 - Contraintes.xlsx'
+    path = 'Documents/Soutenances M1 janvier 2020 - Contraintes.xlsx'
     df = load_excel(path)
 
     pd.set_option('display.max_columns', None)
