@@ -6,24 +6,36 @@
 ## Run
 Lancer le fichier `check_contraints.py` pour afficher les contraintes qui ne sont pas respectées
 
+## Affichage des violations de contraintes
+Le programme affiche 
+#################################################
+TUTEUR AYANT DES SOUTENANCES NON GROUPEES
+Anne-Marie Lesas a 1 soutenances non groupée, de 9h0 a 9h30, 2020-01-07 00:00:00
+Fabrice Huet a 1 soutenances non groupée, de 8h30 a 9h0, 2020-01-06 00:00:00
+
+#################################################
+DIFFERENCE NOMBRE DE SEANCES PRESIDENT/TUTEUR
+Anne-Marie Lesas   -5.0
+Fabrice Huet        1.0
+Gabriel Mopolo      1.0
+Michel Buffa        4.0
+Michel Winter      -2.0
+Pierre Crescenzo    1.0
+dtype: float64
+
+#################################################
+UN TUTEUR NE PEUT PAS ETRE A DEUX ENDROIT A LA FOIS
+
+Michel Winter est présent a plusieurs soutenance a l'horaire : 2020-01-06T09:00
+dans les salles : 
+- Salle du Conseil
+- TD 14
+
 ## Fichier d'entrée
 `Soutenances M1 janvier 2020 - Contraintes.xlsx`: Planning avec des violations de contraintes ajoutées manuellement
 `Soutenances M1 janvier 2020.xlsx`: Planning avec les violations de contraintes corrigées en fonction des résultats du programme
 
 # Format du fichier d'entrée excel
--  
-- 
-- 
-- 
-- : 
-- : 
-- : 
-- 
-- 
-- 
-- 
-
-Available tokens and their meanings are as follows:
 
 | Colonne                              | Data type |
 |:-------------------------------------|:----------|
