@@ -121,8 +121,8 @@ def check_tuteur_unique_time(df, tuteur_columns, room_column, start_hour_column)
 
 
 if __name__ == "__main__":
-    # path = 'Soutenances M1 janvier 2020 - V2.xlsx'
-    path = 'Soutenances M1 janvier 2020 - Contraintes.xlsx'
+    path = 'Soutenances M1 janvier 2020.xlsx'
+    # path = 'Soutenances M1 janvier 2020 - Contraintes.xlsx'
     df = load_excel(path)
 
     tuteur_columns = ['Président', 'Tuteur Université']
