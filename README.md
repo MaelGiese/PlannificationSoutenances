@@ -39,9 +39,6 @@ dans les salles :
 
 
 # Fichier d'entrée
-`Soutenances M1 janvier 2020 - Contraintes.xlsx`: Planning avec des violations de contraintes ajoutées manuellement
-*`Soutenances M1 janvier 2020.xlsx`: Planning avec les violations de contraintes corrigées en fonction des résultats du programme
-
 ## Format du fichier d'entrée excel
 
 | Colonne                              | Data type |
@@ -57,6 +54,10 @@ dans les salles :
 | Salle                                | String    |
 | Nom/Prénom du président du jury      | String    |
 | Nom/Prénom du tuteur Universitaire   | String    |
+
+## Documents
+`Soutenances M1 janvier 2020 - Contraintes.xlsx`: Planning avec des violations de contraintes ajoutées manuellement
+<br />`Soutenances M1 janvier 2020.xlsx`: Planning avec les violations de contraintes corrigées en fonction des résultats du programme
 
 ## Information manquante nécéssaire a la génération d'un planing (non implémenté)
 - Nom prénom du tuteur académique
