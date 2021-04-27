@@ -10,19 +10,19 @@ Lancer le fichier `check_contraints.py` pour afficher les contraintes qui ne son
 `Soutenances M1 janvier 2020 - Contraintes.xlsx`: Planning avec des violations de contraintes ajoutées manuellement
 `Soutenances M1 janvier 2020.xlsx`: Planning avec les violations de contraintes corrigées en fonction des résultats du programme
 
-# Format du fichier d'entrée
-- Nom du candidat
+# Format du fichier d'entrée excel
+- Nom du candidat 
 - Prénom du candidat
 - Email du candidat
 - Entreprise du candidat
-- Date
-- Heure de début de soutenance
-- Heure de fin de soutenance
+- Date: YYYY.mm.dd
+- Heure de début de soutenance: HH:MM
+- Heure de fin de soutenance: HH:MM
 - Numéro du jury
 - Salle
-- Président du jury
-- Tuteur Universitaire
-- 
+- Nom/Prénom du président du jury
+- Nom/Prénom du tuteur Universitaire
+
 ## Information manquante nécéssaire a la génération d'un planing
 - Nom prénom du tuteur académique
 - Nom prénom du tuteur de l'entreprise
