@@ -4,10 +4,13 @@
 - pandas
 
 ## Installation
-Avant d'installer le programme il faut installer les dépendances, taper le commande suivante dans la console:
-`pip install pandas`
-`pip install numpy`
-
+### Installer les dépendances nécessaire
+Le programme nécéssite que python soit installer au préalable sur la machine.
+Avant d'installer le programme il faut installer les dépendances, entrer le commande suivante dans la console:
+<br />`pip install pandas`
+<br />`pip install numpy`
+### Installer le programme
+Il suffit de télécharger le programme depuis ce dépôt GitHub, ouvrir l'invite de commande dans la racine du projet puis entrer la commande `python check_contraints.py` pour lancer la détection de contraintes sur le fichier `Soutenances M1 janvier 2020 - Contraintes.xlsx`.
 
 ## Run
 Lancer le fichier `check_contraints.py` pour afficher les contraintes qui ne sont pas respectées
